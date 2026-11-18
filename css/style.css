@@ -1,0 +1,179 @@
+/* Farben und Schriften als Variablen */
+
+:root {                                                         /* :root = die ganze Seite, hier stehen die Standardwerte */
+    --backround-color: #E8B8C0;                                 /* Hintergrundfarbe im Light-Mode */
+    --text-color: #520415;                                      /* Schriftfarbe im Light-Mode */
+    --font-family-primary: "Archivo Black", sans-serif;         /* Titelschrift, Ersatz: Standard-Schrift ohne Serifen */
+    --font-family-alternative: "Archivo", sans-serif;           /* Textschrift, Ersatz: Standard-Schrift ohne Serifen */
+
+}
+
+
+[data-theme="dark"] {                                           /* Gilt nur, wenn im html-Tag data-theme="dark" steht */
+    --backround-color: #520415;                                 /* Im Dark-Mode ist der Hintergrund dunkelrot */
+    --text-color: #E8B8C0;                                      /* Im Dark-Mode ist die Schrift hellrosa */
+}                                                               /* Ende Dark-Mode */
+
+
+
+
+/* Allgemeine Styles */
+body{                                                           /* body = alles, was auf der Seite sichtbar ist */
+    background-color: var(--backround-color);                   /* Hintergrundfarbe aus der Variable */
+    color: var(--text-color);                                   /* Schriftfarbe aus der Variable */
+    font-family: var(--font-family-alternative);                /* Normaler Text in Archivo */
+}
+
+
+h1, h2, h3 {                                                    /* Alle Titel (Komma = "und") */
+    font-family: var(--font-family-primary);                    /* Titel in Archivo Black */
+}
+
+
+
+/* Header und Navigation */
+header{                                                         /* Der Kopfbereich der Seite */
+    padding: 40px 30px                                          /* Abstand innen: 40px oben und unten, 30px links und rechts */
+}
+
+nav ul{                                                         /* Die Liste im Menü */
+    list-style: none;                                           /* Entfernt die Aufzählungspunkte */
+    display: flex;                                              /* Flexbox: Menüpunkte stehen nebeneinander statt untereinander */
+    justify-content: flex-end;                                  /* Schiebt das Menü nach rechts, wie im Figma */
+    gap: 90px;                                                  /* Abstand zwischen den Menüpunkten */
+}
+
+nav a{                                                          /* Die Links im Menü */
+    color:var(--text-color);                                    /* Linkfarbe wie die Schriftfarbe, statt Standard-Blau */
+    text-decoration: none;                                      /* Entfernt die Unterstreichung */
+    font-weight: 600;                                           /* Halbfett (nimmt die Datei Archivo-SemiBold) */
+    font-size: 16px;                                            /* Schriftgrösse auf 16px */
+}
+
+nav a:hover{                                                    /* Wenn die Maus über einem Link ist */
+    text-decoration: underline;                                 /* Unterstreichung erscheint */
+    text-underline-offset: 6px;                                 /* Abstand zwischen Text und Linie */
+}
+
+
+
+
+/* Logo im Header */
+header img{                                                     /* Gilt für alle Bilder, die im header stehen */
+    height: 150px;                                              /* Das Logo wird 150px hoch */
+    width: auto;                                                /* Die Breite passt sich an, damit das Logo nicht verzerrt wird */
+    display: block;                                             /* Entfernt den kleinen Leerraum, den Bilder unten haben */
+}
+
+header {                                                        /* Der Kopfbereich der Seite */
+    display: flex;                                              /* Flexbox: Logo und Menü stehen nebeneinander statt untereinander */
+    justify-content: space-between;                             /* Logo ganz nach links, Menü ganz nach rechts */
+    align-items: center;                                        /* Beide stehen auf der gleichen Höhe, senkrecht zentriert */
+    padding: 40px 30px;                                         /* Abstand innen: 40px oben und unten, 30px links und rechts */
+}
+
+
+
+/* HERO: TITELBEREICH DER STARTSEITE */
+.hero {
+    text-align: center;                                         /* Zentriert Text und Bild */
+    position: relative;                                          /* Der Hero wird zum Bezugspunkt für die Blüten, die sich daran ausrichten */
+}
+
+.hero h1{                                                       /* Der Titel im Hero */
+    font-size: 5rem;                                            /* Sehr grosse Schrift */
+    text-transform: uppercase;                                  /* Zeigt den Text in Grossbuchstaben an */
+    line-height: 1;                                             /* Zeilenabstand enger */
+    text-align: left;                                           /* Beide Zeilen beginnen links, wie im Figma */
+    width: fit-content;                                         /* Der Titel ist nur so breit wie der Text selbst */
+    margin: 0 auto -170px;                                      /* Oben 0, links und rechts auto = Block mittig, unten -170px = Bild rutscht weiter nach oben */
+    transform: translateX(-60px);                               /* Schiebt den Titel 60px nach links */
+    position: relative;                                         /* Nötig, damit z-index funktioniert */
+    z-index: 1;                                                 /* Der Titel liegt vor dem Bild */
+}
+
+.hero img{                                                       /* Das Kirschenbild im Hero */
+    width: 500px;                                                /* Breite des Bildes */
+    max-width: 100%;                                             /* Nie breiter als der Bildschirm */
+    height: auto;                                                /* Höhe passt sich an */
+}
+
+.hero p{                                                         /* Der Satz unter dem Bild */
+    font-size: 1.5rem;                                           /* Etwas grössere Schrift */
+    max-width: 600;                                              /* Halbfett */
+    margin-top: 30px;                                            /* Abstand nach oben zum Bild */
+}
+
+/* ===== BLÜTENZWEIGE IM HERO ===== */
+.hero .blueten {                                                /* Beide Blütenzweige */
+    position: absolute;                                         /* Frei platziert, ohne im Textfluss Platz zu brauchen */
+    width: 250px;                                               /* Breite der Zweige */
+    height: auto;                                               /* Höhe passt sich an */
+}                                                               /* Ende .blueten */
+
+.hero .blueten-links {                          /* Der Zweig links */
+    left: 0;                                    /* Klebt am linken Rand */
+    top: 20px;                                  /* 20px vom oberen Rand des Heros */
+}                                               /* Ende links */
+
+.hero .blueten-rechts {                         /* Der Zweig rechts */
+    right: 0;                                   /* Klebt am rechten Rand */
+    top: 220px;                                 /* Tiefer als der linke, wie im Figma */
+}                                               /* Ende rechts */
+
+.hero .blueten-links {                          /* Der Zweig links */
+    left: -10px;                                /* Schiebt den Zweig 80px über den linken Rand hinaus, das Stielende ist abgeschnitten */
+    top: 20px;                                  /* 20px vom oberen Rand des Heros */
+}                                               /* Ende links */
+
+.hero .blueten-rechts {                         /* Der Zweig rechts */
+    right: -15px;                               /* Schiebt den Zweig 80px über den rechten Rand hinaus */
+    top: 220px;                                 /* Tiefer als der linke, wie im Figma */
+}                                               /* Ende rechts */
+
+.hero {                                         /* Alles mit class="hero" */
+    text-align: center;                         /* Zentriert Text und Bild */
+    position: relative;                         /* Der Hero wird zum Bezugspunkt für die Blüten */
+    overflow: hidden;                           /* Alles, was über den Rand des Heros ragt, wird abgeschnitten, kein Scrollen */
+}                                               /* Ende .hero */
+
+
+/* Willkommen: Einleitungstext */
+.willkommen{                                                    /* Alles mit class="willkommen" */
+    max-width: 700px;                                           /* Der Textblock wird höchstens 700px breit, damit die Zeilen nicht zu lang werden */
+    margin: 80px auto;                                          /* Abstand oben und unten 80px, links und rechts auto = der Block steht in der Mitte */
+    padding: 0 30px;                                            /* Innenabstand links und rechts 30px, damit der Text auf dem Handy nicht am Rand klebt */
+}
+
+.willkommen h2{                                                 /* Die Überschrift im Willkommen-Bereich */
+    font-size: 1.8rem;                                          /* Grösse der Überschrift */
+    margin-bottom: 15px;                                        /* Abstand nach unten zum ersten Absatz */
+}
+
+.willkommen p{                                                  /* Alle Absätze im Willkommen-Bereich */
+    margin-bottom: 15px;                                        /* Abstand zwischen den Absätzen */
+    line-height: 1.5;                                           /* Zeilenabstand, damit der Text gut lesbar ist */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

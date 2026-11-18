@@ -1,10 +1,79 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Hallo Noé</title>
-</head>
-<body>
+<!DOCTYPE html>                                         <!-- Sagt dem Browser: Das ist HTML5 -->
+<html lang="de" data-theme="dark">                      <!-- Wurzel der Seite, Sprache Deutsch und Dark-Mode aktiv -->
+<head>                                                  <!-- Kopf: Infos für den Browser, nicht sichtbar -->
+    <meta charset="UTF-8">                              <!-- Zeichensatz, damit ä, ö, ü richtig angezeigt werden -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Seite skaliert auf dem Handy richtig -->
+    <title>Die Kirsche</title>                          <!-- Text im Browser-Tab -->
+    <link rel="stylesheet" href="css/fonts.css">        <!-- Zuerst die Schriften laden -->
+    <link rel="stylesheet" href="css/resets.css">       <!-- Dann den Reset -->
+    <link rel="stylesheet" href="css/style.css">        <!-- Zuletzt mein eigenes Styling -->
+</head>                                                 <!-- Ende des Kopfs -->
 
-</body>
-</html>
+
+<body>                                                  <!-- Körper: alles, was man auf der Seite sieht -->
+<!-- HEADER: Kopfbereich der Webseite, enthält Logo und Navigation -->
+    <header>
+        <!-- Logo: ein Klick darauf führt zur Startseite -->
+        <a href="index.html">
+            <img src="img/logo/logo_E8B8C0.png" alt="Logo Die Kirsche">
+        </a>
+
+        <!-- Navigation: Bereich für die Hauptlinks der Seite -->
+        <nav aria-label="Hauptnavigation">
+
+            <!-- Liste: enthält alle Menüpunkte -->
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="ueber-mich.html">Über mich</a></li>
+                <li><a href="die-entstehung.html">Die Kirsche</a></li>
+                <li><a href="diy.html">DIY</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+
+
+<!-- MAIN: der Hauptinhalt der Seite, es gibt nur ein main pro Seite -->
+<main>
+
+    <!-- Hero: der grosse Einstiegsbereich mit Titel, Bild und Untertitel -->
+    <section class="hero">                           <!-- class="hero": Name, mit dem ich den Bereich im CSS anspreche -->
+
+        <!-- Blütenzweige: reine Dekoration, deshalb alt (Screenreader überspringen sie) -->
+        <img class="blueten blueten-links" src="img/blume_links.png" alt="">
+        <img class="blueten blueten-rechts" src="img/blume_rechts.png" alt="">
+
+        <h1>Die<br>Kirsche</h1>                      <!-- Haupttitel, br = Zeilenumbruch -->
+
+        <!-- Kirschenbild: Dateinamen im Ordner img/startseite prüfen und anpassen -->
+        <img src="img/kirsche.png" alt="Zwei glänzende rote Kirschen an einem Stiel">
+
+        <!-- Untertitel unter dem Bild -->
+        <p>Eine kleine Welt, rund um die Kirsche.<br>Wissen. Inspiration und kreative Ideen.</p>
+    </section>                                      <!-- Ende des Hero-Bereichs -->
+
+    <section class="willkommen">
+        <h2>Willkommen in der Welt der Kirsche!</h2>
+        <p><strong>Klein, rund und voller Überraschungen!</strong></p>
+        <p>Die Kirsche ist viel mehr als nur eine süsse Sommerfrucht. Hinter ihrer glänzend roten Schale verbergen sich spannende Geschichten, interessante Fakten und jede Menge kreative Möglichkeiten.</p></o>
+        <p>Auf dieser Webseite dreht sich alles um die kleine rote Frucht. Entdecke, woher die Kirsche stammt, wie sie wächst und was sie so besonders macht. Lass dich von spannenden Informationen, überraschendem Wissen und kreativen DIY-Ideen inspirieren.</p>
+        <p>Ob du etwas Neues lernen, selbst kreativ werden oder einfach in die Welt der Kirschen eintauchen möchtest – hier bist du genau richtig!</p>
+
+    </section>
+                                              <!-- Ende des Hauptinhalts -->
+
+
+
+
+
+
+
+</main>
+
+
+</body>                                                 <!-- Ende des Körpers -->
+</html>                                                 <!-- Ende der Seite -->

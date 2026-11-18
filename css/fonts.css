@@ -1,0 +1,30 @@
+/* Archivo Black: für Titel */
+@font-face {                                              /* Startet die Beschreibung einer eigenen Schrift */
+    font-family: "Archivo Black";                         /* Name, mit dem ich die Schrift später im CSS aufrufe */
+    src: url("../fonts/ArchivoBlack-Regular.ttf")         /* Pfad zur Schriftdatei: ../ geht aus dem Ordner css/ eine Ebene nach oben */
+    format(truetype);                                 /* Sagt dem Browser Dateiformat: ttf truetype, so habe ich die Schrift heruntergeladen*/
+    font-weight: 400;                                     /* Schriftstärke, die zu dieser Datei gehört (400=normal)*/
+    font-display: swap;                                   /* Text ist sofort sichtbar, auch wenn die Schrift noch lädt */
+}                                                         /* Ende der Schriftbeschreibung*/
+
+
+
+/* Archivo Regular: wird für den normalen Fliesstext verwendet */
+@font-face {                                                /* Startet die nächste Schrift*/
+    font-family: Archivo;                                   /* Name der Schriffamilie*/
+    src: url("../fonts/Archivo-Regular.ttf")           /* Pfad zur Datei der normalen Schrift*/
+    format("truetype");                                 /* Dateiformat:ttf truetype, so habe ich die Schrift heruntergeladen*/
+    font-weight: 400;                                       /* 400 = normale Schriftstärke*/
+    font-display: swap;                                     /* Text zuerst in Ersatzschrift anzeigen */
+}                                                           /* Ende der Schriftbeschreibung */
+
+
+
+/* Archivo SemiBold: wird für hervorgehobenen Text verwendet (z. B. Navigation) */
+@font-face {                                                /* Startet die dritte Schrift */
+    font-family: Archivo;                                   /* Gleicher Name wie oben: so gehören beide Schnitte zur selben Familie */
+    src: url("../fonts/Archivo-SemiBold.ttf")               /* Pfad zur Datei der halbfetten Schrift */
+    format("truetype");                             /* Dateiformat: ttf truetype, so habe ich die Schrift heruntergeladen*/
+    font-weight: 600;                                       /* 600 = halbfett: der Browser nimmt diese Datei bei font-weight: 600 */
+    font-display: swap;                                     /* Text zuerst in Ersatzschrift anzeigen */
+}                                                           /* Ende */
